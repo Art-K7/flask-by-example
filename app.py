@@ -80,7 +80,7 @@ def get_counts():
         url = 'http://' + url
     # start job
     job = q.enqueue_call(
-        func=count_and_save_words, args=(url,), result_ttl=5000
+        func='app.count_and_save_words', args=(url,), result_ttl=5000
     )
     # return created job id
     return job.get_id()
